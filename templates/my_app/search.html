@@ -1,54 +1,27 @@
 {% extends 'home.html' %}
 
 {% block content %}
-<h1 style="text-align : center ; color: #EE6E73">Scraper</h1>
-
+<h1 style="text-align : center ; color: #EE6E73">{{ search | title }}<i class="large material-icons"
+                                                                        style="color: #EE6E73">flash_on</i></h1>
+<br>
 <div class="container">
     <div class="row">
+        {% for post in final_postings %}
         <div class="col s4">
             <div class="card">
                 <div class="card-image">
-                    <img src="https://journocode.com/wp-content/uploads/2018/01/scraping.jpg">
+                    <img src="{{ post.2 }}">
                 </div>
                 <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                    <p>{{ post.0 }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="/">This is a link</a>
+                    <a href="{{ post.1 }}">LINK</a>
                 </div>
             </div>
         </div>
-
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://journocode.com/wp-content/uploads/2018/01/scraping.jpg">
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">This is a link</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://journocode.com/wp-content/uploads/2018/01/scraping.jpg">
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">This is a link</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
+
 {% endblock content%}
